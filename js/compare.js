@@ -79,11 +79,12 @@ function ShowCompare() {
 
     UpdateCompareTable();
     document.getElementById("compare").style.display = "block";
-    document.body.style.overflow = "hidden";
+    document.body.classList.add = ("compare-open")
 }
 
 function HideCompare(){
     document.getElementById("compare").style.display = "none"; 
+    document.body.classList.remove("compare-open");
 }
 
 function UpdateCompareTable() {
@@ -105,7 +106,7 @@ function UpdateCompareTable() {
         document.getElementById(`compare_preco_${i}`).textContent = `R$ ${car.preco.toLocaleString('pt-BR')}`;
     }
     
-    document.addEventListener('DOMContentLoaded', function(){
-        botaoComparar();
-    })
 }
+document.addEventListener('DOMContentLoaded', function(){
+    botaoComparar();
+})
