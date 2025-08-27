@@ -59,11 +59,11 @@ function botaoComparar(){
     const compareBtn = document.querySelector("button[onclick='ShowCompare()']") 
 
     if(carArr.length === 2){
-        compareBtn.disable = false;
+        compareBtn.disabled = false;
         compareBtn.style.opacity = 1;
         compareBtn.style.cursor = "pointer";
     }else{
-        compareBtn.disable = true;
+        compareBtn.disabled = true;
         compareBtn.style.opacity = 0.5;
         compareBtn.style.cursor = "not-allowed"
 
@@ -79,7 +79,7 @@ function ShowCompare() {
 
     UpdateCompareTable();
     document.getElementById("compare").style.display = "block";
-    document.body.classList.add = ("compare-open")
+    document.body.classList.add("compare-open");
 }
 
 function HideCompare(){
