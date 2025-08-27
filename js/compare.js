@@ -3,22 +3,23 @@
 let carArr = [];
 
 class Car {
-   
 
-    constructor(nome, preco, alturaCacamba, alturaVeiculo, alturaSolo, capacidadeCarga, motor, potencia, volumeCacamba, roda, image){
-       this.nome = nome;
-       this.preco = preco;
-       this.alturaCacamba = alturaCacamba;
-       this.alturaVeiculo = alturaVeiculo;
-       this.alturaSolo = alturaSolo;
-       this.capacidadeCarga = capacidadeCarga;
-       this.motor = motor;
-       this.potencia = potencia;
-       this.volumeCacamba = volumeCacamba;
-       this.roda = roda;
-       this.image = image;
+
+    constructor(nome, preco, alturaCacamba, alturaVeiculo, alturaSolo, capacidadeCarga, motor, potencia, volumeCacamba, roda, image) {
+        this.nome = nome;
+        this.preco = preco;
+        this.alturaCacamba = alturaCacamba;
+        this.alturaVeiculo = alturaVeiculo;
+        this.alturaSolo = alturaSolo;
+        this.capacidadeCarga = capacidadeCarga;
+        this.motor = motor;
+        this.potencia = potencia;
+        this.volumeCacamba = volumeCacamba;
+        this.roda = roda;
+        this.image = image;
     }
-} 
+}
+
 
 // search on array if exist carClass returning 1 if not return -1
 function GetCarArrPosition(arr, carClass) {
@@ -55,18 +56,17 @@ function SetCarToCompare(el, carClass) {
     }
 }
 
-function botaoComparar(){
-    const compareBtn = document.querySelector("button[onclick='ShowCompare()']") 
+function botaoComparar() {
+    const compareBtn = document.querySelector("button[onclick=1'ShowCompare()']");
 
-    if(carArr.length === 2){
+    if (carArr.length === 2) {
         compareBtn.disabled = false;
         compareBtn.style.opacity = 1;
         compareBtn.style.cursor = "pointer";
-    }else{
+    } else {
         compareBtn.disabled = true;
         compareBtn.style.opacity = 0.5;
         compareBtn.style.cursor = "not-allowed"
-
     }
 }
 
@@ -89,13 +89,13 @@ function HideCompare(){
 
 function UpdateCompareTable() {
 
-    for(let i = 0; i < carArr.length; i++){
+    for (let i = 0; i < carArr.length; i++) {
         const car = carArr[i];
 
         document.getElementById(`compare_image_${i}`).innerHTML = `<img src="${car.image}" width="100">`;
 
         document.getElementById(`compare_modelo_${i}`).textContent = car.nome;
-        document.getElementById(`compare_alturacacamba${i}`).textContent = car.alturaCacamba;
+        document.getElementById(`compare_alturacacamba_${i}`).textContent = car.alturaCacamba;
         document.getElementById(`compare_alturaveiculo_${i}`).textContent = car.alturaVeiculo;
         document.getElementById(`compare_alturasolo_${i}`).textContent = car.alturaSolo;
         document.getElementById(`compare_capacidadecarga_${i}`).textContent = car.capacidadeCarga;
@@ -105,6 +105,7 @@ function UpdateCompareTable() {
         document.getElementById(`compare_roda_${i}`).textContent = car.roda;
         document.getElementById(`compare_preco_${i}`).textContent = `R$ ${car.preco.toLocaleString('pt-BR')}`;
     }
+
     
 }
 document.addEventListener('DOMContentLoaded', function(){
